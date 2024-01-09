@@ -73,7 +73,7 @@ class MiniMaxWorker(ApiModelWorker):
             with response as r:
                 text = ""
                 for e in r.iter_text():
-                    if not e.startswith("data: "):
+                    if not e.startswith("data: "): # 真是优秀的返回
                         data = {
                                 "error_code": 500,
                                 "text": f"minimax返回错误的结果：{e}",
